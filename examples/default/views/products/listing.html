@@ -1,0 +1,117 @@
+{{define "styles"}}
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .product-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 24px;
+        padding: 24px;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    .card {
+        background: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        overflow: hidden;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card-image {
+        aspect-ratio: 16 / 10;
+        overflow: hidden;
+    }
+
+    .card-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+
+    .card:hover .card-image img {
+        transform: scale(1.05);
+    }
+
+    .card-body {
+        padding: 16px 20px 20px;
+    }
+
+    .p-title {
+        font-size: 1.125rem;
+        font-weight: 600;
+        color: #1f2937;
+        margin-bottom: 8px;
+    }
+
+    .p-descript {
+        font-size: 0.875rem;
+        color: #6b7280;
+        line-height: 1.5;
+    }
+
+    .btn-container {
+        margin-top: 20px;
+    }
+
+    .btn {
+        font: inherit;
+        display: block;
+        width: 100%;
+        padding: 12px 24px;
+        background: #ffffff;
+        border: 1px solid #d1d5db;
+        border-radius: 8px;
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: #374151;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        box-shadow: inset 0 -2px 4px 0px rgb(199 199 199 / 38%);
+    }
+
+    .btn:hover {}
+
+    .btn:active {
+        box-shadow: inset 0 3px 4px 0px rgb(199 199 199 / 38%);
+    }
+</style>
+{{end}}
+
+{{define "content"}}
+<div class="product-container" x-data="app">
+    {{range .Products}}
+    <div class="card">
+        <div class="card-image">
+            <img src="{{.Img}}" alt="{{.Name}}">
+        </div>
+        <div class="card-body">
+            <div class="p-title">{{.Name}}</div>
+            <div class="p-descript">{{.Description}}</div>
+            <div class="btn-container">
+                <button class="btn" x-on:click="onFindMore" data-name="{{.Name}}">Find More</button>
+            </div>
+        </div>
+    </div>
+    {{end}}
+    {{or (len .Products) 6}}
+    {{printf "sdf:%v" (len .Products)}}
+</div>
+{{end}}
+
+{{define "scripts"}}
+<script>
+    document.addEventListener('alpine:init', () => {
+        Alpine.data('app', () => ({
+            onFindMore(evt) {
+                location.href = '/products/' + evt.target.attributes['data-name'].value
+            }
+        }));
+    });
+</script>
+<script src="/static/alpine.js"></script>
+{{end}}

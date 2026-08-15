@@ -85,14 +85,22 @@ func (t *layoutViewEngine) Render(writer io.Writer, viewName string, data any) e
 		for _, file := range v.files {
 			rawFiles = append(rawFiles, path.Join(t.viewDir, getFileName(file, t.ext)))
 		}
-		tmplt, err = t.layoutTemplate.tmpl.ParseFiles(rawFiles...)
+		tmplt, err = t.layoutTemplate.tmpl.Clone()
+		if err != nil {
+			return err
+		}
+		tmplt, err = tmplt.ParseFiles(rawFiles...)
 		if err != nil {
 			return err
 		}
 
 	} else {
 		viewFile := path.Join(t.viewDir, getFileName(viewName, t.ext))
-		tmplt, err = t.layoutTemplate.tmpl.ParseFiles(viewFile)
+		tmplt, err = t.layoutTemplate.tmpl.Clone()
+		if err != nil {
+			return err
+		}
+		tmplt, err = tmplt.ParseFiles(viewFile)
 		if err != nil {
 			return err
 		}
