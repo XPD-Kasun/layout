@@ -93,7 +93,7 @@
             <div class="p-title">{{.Name}}</div>
             <div class="p-descript">{{.Description}}</div>
             <div class="btn-container">
-                <button class="btn" x-on:click="onFindMore" data-name="{{.Name}}">Find More</button>
+                <button class="btn" x-on:click="onFindMore" data-name="{{.Name}}" data-id="{{.Id}}">Find More</button>
             </div>
         </div>
     </div>
@@ -108,7 +108,9 @@
     document.addEventListener('alpine:init', () => {
         Alpine.data('app', () => ({
             onFindMore(evt) {
-                location.href = '/products/' + evt.target.attributes['data-name'].value
+                let productName = evt.target.attributes['data-name'].value;
+                let productId = evt.target.attributes['data-id'].value;
+                location.href = `/products/${productId}/${productName}`;
             }
         }));
     });

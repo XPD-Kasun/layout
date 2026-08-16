@@ -1,0 +1,135 @@
+{{define "styles"}}
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .product-page {
+        display: flex;
+        max-width: 1200px;
+        margin: 40px auto;
+        padding: 0 24px;
+        gap: 48px;
+    }
+
+    .column {
+        flex: 1;
+    }
+
+    .product-image {
+        width: 100%;
+        max-width: 500px;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-info {
+        margin-top: 24px;
+    }
+
+    .product-name {
+        font-size: 1.75rem;
+        font-weight: 700;
+        color: #1f2937;
+        margin-bottom: 12px;
+    }
+
+    .product-description {
+        font-size: 1rem;
+        color: #6b7280;
+        line-height: 1.6;
+    }
+
+    .marketing {
+        padding: 24px 0;
+    }
+
+    .marketing h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: #1f2937;
+        margin-bottom: 16px;
+    }
+
+    .marketing ul {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 24px 0;
+    }
+
+    .marketing li {
+        padding: 8px 0;
+        color: #6b7280;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .marketing li::before {
+        content: "\2713";
+        color: #10b981;
+        font-weight: bold;
+    }
+
+    .price {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #1f2937;
+        margin-bottom: 20px;
+    }
+
+    .btn {
+        display: block;
+        width: 100%;
+        padding: 14px 28px;
+        background: #3b82f6;
+        border: none;
+        border-radius: 8px;
+        font-size: 1rem;
+        font-weight: 600;
+        color: #ffffff;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        box-shadow: 0 2px 4px 0 rgba(59, 130, 246, 0.3);
+    }
+
+    .btn:hover {
+        background: #2563eb;
+        box-shadow: 0 4px 8px 0 rgba(59, 130, 246, 0.4);
+        transform: translateY(-1px);
+    }
+
+    .btn:active {
+        background: #1d4ed8;
+        transform: translateY(0);
+    }
+</style>
+{{end}}
+
+{{define "content"}}
+{{with .Product}}
+<div class="product-page">
+    <div class="column">
+        <img src="{{.Img}}" alt="Product Image" class="product-image">
+    </div>
+    <div class="column">
+        <div class="product-info">
+            <h1 class="product-name">{{.Name}}</h1>
+            <p class="product-description">{{.Description}}</p>
+        </div>
+        <div class="marketing">
+            <h3>Why you'll love it</h3>
+            <ul>
+                {{range .Features}}
+                <li>{{.}}</li>
+                {{end}}
+            </ul>
+            <div class="price">{{printf "$%.2f" .Price}}</div>
+            <button class="btn" onclick="location.href='/'">Add to Cart</button>
+        </div>
+    </div>
+</div>
+{{end}}
+{{end}}
