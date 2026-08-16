@@ -1,2 +1,132 @@
-/** todo: generate sample products array in json using AI since no point of hand coding a data json.
- hope to use id, name, description, price and feature array.**/
+[
+    {
+        "id": 1,
+        "name": "QuantumBackpack Pro",
+        "description": "A smart backpack with integrated solar panel, USB-C fast charging, and anti-theft RFID pockets. Ideal for digital nomads and daily commuters.",
+        "price": 199.99,
+        "features": [
+            "Solar charging",
+            "Water-resistant",
+            "RFID-safe",
+            "Laptop compartment up to 16\""
+        ],
+        "img": "https://picsum.photos/id/26/400/300"
+    },
+    {
+        "id": 2,
+        "name": "AuraSound Mini Speaker",
+        "description": "Compact Bluetooth 5.3 speaker with 360° immersive audio, 20-hour battery life, and built-in voice assistant. Perfect for indoor and outdoor use.",
+        "price": 79.50,
+        "features": [
+            "360° audio",
+            "IP67 waterproof",
+            "20 hr playtime",
+            "Voice assistant ready"
+        ],
+        "img": "https://picsum.photos/id/29/400/300"
+    },
+    {
+        "id": 3,
+        "name": "ErgoGlide Mouse",
+        "description": "Wireless ergonomic mouse with silent clicks, adjustable DPI up to 4000, and a rechargeable battery lasting 6 months on a single charge.",
+        "price": 44.99,
+        "features": [
+            "Silent clicks",
+            "Adjustable DPI",
+            "Rechargeable",
+            "Ergonomic design"
+        ],
+        "img": "https://picsum.photos/id/24/400/300"
+    },
+    {
+        "id": 4,
+        "name": "LuminaDesk Lamp",
+        "description": "LED desk lamp with touch controls, 3 color temperatures, and built-in wireless charging pad for smartphones. Reduces eye strain with flicker-free light.",
+        "price": 59.00,
+        "features": [
+            "Touch control",
+            "3 color temps",
+            "Wireless charging",
+            "Flicker-free"
+        ],
+        "img": "https://picsum.photos/id/27/400/300"
+    },
+    {
+        "id": 5,
+        "name": "FitPulse Tracker",
+        "description": "Health and fitness tracker with heart rate monitoring, SpO2 sensor, sleep analysis, and GPS. Syncs with iOS and Android via companion app.",
+        "price": 129.75,
+        "features": [
+            "Heart rate & SpO2",
+            "GPS",
+            "Sleep tracking",
+            "Water-resistant (50m)"
+        ],
+        "img": "https://picsum.photos/id/30/400/300"
+    },
+    {
+        "id": 6,
+        "name": "ZenFlow Humidifier",
+        "description": "Ultrasonic cool-mist humidifier with adjustable mist output, auto shut-off, and a 2.5L tank that runs up to 24 hours. Whisper-quiet operation for bedrooms and offices.",
+        "price": 89.99,
+        "features": [
+            "Ultrasonic",
+            "2.5L tank",
+            "Auto shut-off",
+            "Whisper-quiet"
+        ],
+        "img": "https://picsum.photos/id/32/400/300"
+    },
+    {
+        "id": 7,
+        "name": "PulseCharge Power Bank",
+        "description": "20000mAh portable power bank with 65W USB-C PD output, fast-charging 3 devices simultaneously, and digital battery percentage display.",
+        "price": 74.50,
+        "features": [
+            "20000mAh",
+            "65W PD",
+            "3-port output",
+            "Digital display"
+        ],
+        "img": "https://picsum.photos/id/34/400/300"
+    },
+    {
+        "id": 8,
+        "name": "AeroFit Yoga Mat",
+        "description": "Non-slip eco-friendly yoga mat with alignment lines, 6mm thickness for joint comfort, and moisture-wicking surface. Suitable for all yoga styles.",
+        "price": 49.95,
+        "features": [
+            "Non-slip",
+            "6mm thick",
+            "Alignment lines",
+            "Eco-friendly"
+        ],
+        "img": "https://picsum.photos/id/35/400/300"
+    },
+    {
+        "id": 9,
+        "name": "CrispView Monitor Arm",
+        "description": "Full-motion gas spring monitor arm for screens up to 35\", with USB ports, cable management, and clamp/grommet mounting options. Ergonomic height adjustment.",
+        "price": 119.00,
+        "features": [
+            "Gas spring",
+            "USB ports",
+            "Cable management",
+            "Up to 35\""
+        ],
+        "img": "https://picsum.photos/id/36/400/300"
+    },
+    {
+        "id": 10,
+        "name": "SonicClean Toothbrush",
+        "description": "Sonic electric toothbrush with 4 cleaning modes, 2-minute timer, and 8 replacement heads. Waterproof and USB rechargeable, lasting 30 days per charge.",
+        "price": 39.99,
+        "features": [
+            "4 modes",
+            "Timer",
+            "8 brush heads",
+            "30-day battery"
+        ],
+        "img": "https://picsum.photos/id/38/400/300"
+    }
+]

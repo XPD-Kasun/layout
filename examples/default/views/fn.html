@@ -1,0 +1,25 @@
+{{define "styles"}}
+<style>
+    .fn {
+        color: green;
+        font-size: 20px;
+    }
+</style>
+{{end}}
+
+{{define "content"}}
+<div class="fn" x-on:click="alert('test')" x-data="app">
+    Testsdsdf
+</div>
+{{end}}
+
+{{define "scripts"}}
+<script>
+    document.addEventListener('alpine:init', () => {
+        Alpine.data('app', () => ({
+
+        }));
+    })
+</script>
+<script src="/static/alpine.js"></script>
+{{end}}
